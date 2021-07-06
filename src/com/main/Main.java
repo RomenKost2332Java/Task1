@@ -25,7 +25,7 @@ public class Main {
                     maxValue = elementValue;
             }
         }
-        System.out.println(maxValue); // deduce max value of element
+        System.out.println("The max value of element is "+maxValue+"."); // deduce max value of element
 
         /* comment to answer
         * The answer always is infinity, because every array have element with indexes i=0, j=0, because of that we
