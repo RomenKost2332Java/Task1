@@ -1,15 +1,17 @@
 package com.main;
 
 public class Main {
+    private static final double c = -1.49;
+    private static final double d = 23.4;
+
+    private static final int sizeX = 10;
+    private static final int sizeY = 8; // Initialization of all need constants
+
+    private static final double sinSinC = Math.sin(Math.sin(c));
+    private static final double lnLnD = 4*Math.log(Math.log(d)); // Initialization of constants to optimize calculation
+
+
     public static void main(String[] args) {
-        final int sizeX = 10;
-        final int sizeY = 8;
-        final double c = -1.49;
-        final double d = 23.4; // Initialization of all need constants
-
-        final double sinSinC = Math.sin(Math.sin(c));
-        final double lnLnD = 4*Math.log(Math.log(d)); // Initialization of constants to optimize calculation
-
         int[][] array = new int[sizeX][sizeY]; //Creating of two-dimensional array sizeX x sizeY
 
         double maxValue = 0;
@@ -20,7 +22,7 @@ public class Main {
         double elementValue; // buffer to contain value of each element
         for(int i = 0; i<array.length; i++){
             for(int j = 0; j<array[0].length; j++){
-                elementValue = Math.sqrt(Math.abs(sinSinC - lnLnD/Math.pow(i, j)));
+                elementValue = calculateElementValue(i, j);
                 if (elementValue > maxValue)
                     maxValue = elementValue;
             }
@@ -32,5 +34,9 @@ public class Main {
         * always have element value sqrt(abs(const1 - const2/0^0)) = sqrt(abs(const1 - const2/0)) =
         * = sqrt(abs(const1 - infinity)) = sqrt(infinity) = infinity
         * */
+    }
+
+    private static double calculateElementValue(int i, int j){
+        return Math.sqrt(Math.abs(sinSinC - lnLnD/Math.pow(i, j)));
     }
 }
