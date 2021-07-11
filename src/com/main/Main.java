@@ -2,17 +2,14 @@ package com.main;
 
 public class Main {
     private static final double c = -1.49;
-    private static final double d = 23.4;
-
-    private static final int sizeX = 10;
-    private static final int sizeY = 8; // Initialization of all need constants
+    private static final double d = 23.4;// Initialization of all need constants
 
     private static final double sinSinC = Math.sin(Math.sin(c));
     private static final double lnLnD = 4*Math.log(Math.log(d)); // Initialization of constants to optimize calculation
 
 
     public static void main(String[] args) {
-        int[][] array = new int[sizeX][sizeY]; //Creating of two-dimensional array sizeX x sizeY
+        int[][] array = new int[10][10]; //Creating of two-dimensional array sizeX x sizeY
 
         double maxValue = 0;
         /*
